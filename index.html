@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KSHOP · Tecnología y servicio técnico en Bucaramanga</title>
+<meta name="color-scheme" content="dark">
+<style>
+:root{color-scheme:dark;--bg:#07060b;--card:#121019;--line:#262233;--tx:#f3f1fa;--mut:#9a95ad;--p:#8b2bff;--p2:#c06bff;--g:#25d366;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Segoe UI",Roboto,system-ui,-apple-system,sans-serif;line-height:1.5;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(7,6,11,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:rgba(7,6,11,.9);z-index:30}
+.nav{display:flex;align-items:center;justify-content:space-between;height:60px;gap:10px}
+.logo{font-weight:900;font-size:24px;letter-spacing:-1px;display:flex;align-items:center;gap:8px}
+.logo i{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--p),var(--p2));font-style:normal;box-shadow:0 0 18px rgba(139,43,255,.6);font-size:18px}
+.logo b{color:var(--p2)}
+nav.links{display:flex;gap:20px;font-size:14px;color:var(--mut)}
+nav.links a:hover{color:#fff}
+.cartbtn{position:relative;background:var(--card);border:1px solid var(--line);color:var(--tx);border-radius:12px;padding:8px 14px;font-size:15px;cursor:pointer}
+.cartbtn span{position:absolute;top:-6px;right:-6px;background:var(--p);border-radius:20px;font-size:11px;min-width:20px;height:20px;display:grid;place-items:center;font-weight:700}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:14px;padding:13px 22px;font-weight:700;font-size:15px;cursor:pointer;color:#fff;font-family:inherit}
+.b1{background:linear-gradient(135deg,var(--p),#6a1de0);box-shadow:0 8px 30px rgba(139,43,255,.4)}
+.b2{background:var(--g);color:#052e16}
+.b3{background:transparent;border:1px solid var(--line)}
+.btn:active{transform:scale(.97)}
+.hero{position:relative;padding:64px 0 50px;overflow:hidden}
+.hero::before{content:"";position:absolute;width:520px;height:520px;right:-140px;top:-120px;background:radial-gradient(circle,rgba(139,43,255,.55),transparent 65%);filter:blur(10px);animation:float 8s ease-in-out infinite}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:44px 44px;opacity:.25;mask-image:radial-gradient(circle at 70% 30%,#000,transparent 70%);-webkit-mask-image:radial-gradient(circle at 70% 30%,#000,transparent 70%)}
+.hero .wrap{position:relative;z-index:1;display:grid;gap:30px;grid-template-columns:1.2fr .8fr;align-items:center}
+.tag{display:inline-block;border:1px solid var(--p);color:var(--p2);border-radius:20px;padding:4px 12px;font-size:12px;letter-spacing:1px;margin-bottom:14px}
+h1{font-size:clamp(34px,6.5vw,64px);line-height:1.02;margin:0 0 16px;letter-spacing:-2px}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--p2),var(--p));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--mut);font-size:17px;max-width:520px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.phone{justify-self:center;width:210px;height:380px;border-radius:36px;border:2px solid #3a3350;background:linear-gradient(160deg,#1a1527,#0b0911);position:relative;box-shadow:0 0 80px rgba(139,43,255,.35);animation:float 6s ease-in-out infinite;display:grid;place-items:center;font-size:74px}
+.phone::before{content:"";position:absolute;top:10px;width:60px;height:7px;border-radius:5px;background:#000}
+.phone small{position:absolute;bottom:28px;font-size:13px;letter-spacing:4px;color:var(--p2);font-weight:800}
+@keyframes float{50%{transform:translateY(-14px)}}
+section{padding:46px 0}
+h2{font-size:clamp(26px,4vw,38px);margin:0 0 6px;letter-spacing:-1px}
+.sub{color:var(--mut);margin:0 0 24px}
+.cats{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}
+.chip{flex:none;background:var(--card);border:1px solid var(--line);color:var(--tx);border-radius:30px;padding:10px 18px;cursor:pointer;font-size:14px;font-family:inherit}
+.chip.on{background:var(--p);border-color:var(--p);box-shadow:0 0 20px rgba(139,43,255,.5)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;margin-top:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:.25s}
+.card:hover{transform:translateY(-4px);border-color:var(--p);box-shadow:0 10px 40px rgba(139,43,255,.2)}
+.ph{position:relative;aspect-ratio:1/1;display:grid;place-items:center;font-size:64px;background:radial-gradient(circle at 50% 40%,#2a1650,#120f1b)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.off{position:absolute;top:10px;left:10px;background:var(--p);font-size:11px;font-weight:800;padding:4px 10px;border-radius:20px;z-index:1}
+.demo{position:absolute;top:10px;right:10px;background:#000a;color:var(--mut);font-size:10px;padding:3px 8px;border-radius:20px;z-index:1}
+.cb{padding:14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.cb h3{margin:0;font-size:16px}.cb p{margin:0;color:var(--mut);font-size:13px;flex:1}
+.pr{font-size:20px;font-weight:800}.pr s{font-size:13px;color:var(--mut);font-weight:400;margin-left:6px}
+.row{display:flex;gap:8px;margin-top:6px}.row .btn{flex:1;padding:10px;font-size:13px;border-radius:11px}
+.cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.cc{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 14px;text-align:center;cursor:pointer;transition:.25s;font-family:inherit;color:var(--tx);font-size:14px}
+.cc:hover{border-color:var(--p2)}.cc div{font-size:34px;margin-bottom:6px}
+.promo{border-radius:26px;padding:34px;background:linear-gradient(120deg,#3b0f8c,#8b2bff 60%,#c06bff);display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
+.promo h2{margin:0}.promo p{margin:4px 0 0;opacity:.9}
+.svc{background:linear-gradient(160deg,#150f24,#0b0911);border:1px solid var(--line);border-radius:26px;padding:34px;position:relative;overflow:hidden}
+.svc::after{content:"⚙";position:absolute;right:-20px;top:-40px;font-size:200px;opacity:.05}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:22px 0}
+.sg div{background:#ffffff08;border:1px solid var(--line);border-radius:16px;padding:16px}.sg b{display:block;margin:6px 0 2px}.sg span{color:var(--mut);font-size:13px}
+.adv{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.adv div{padding:20px;border:1px solid var(--line);border-radius:18px;background:var(--card)}.adv span{font-size:28px}
+.adv p{color:var(--mut);font-size:14px;margin:4px 0 0}
+footer{border-top:1px solid var(--line);padding:34px 0 110px;color:var(--mut);font-size:14px}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;width:58px;height:58px;border-radius:50%;background:var(--g);display:grid;place-items:center;font-size:28px;box-shadow:0 6px 24px rgba(37,211,102,.5)}
+.ov{position:fixed;inset:0;background:#000a;z-index:50;opacity:0;pointer-events:none;transition:.25s}
+.ov.on{opacity:1;pointer-events:auto}
+.dr{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:#0e0c15;border-left:1px solid var(--line);z-index:60;transform:translateX(100%);transition:.3s;display:flex;flex-direction:column;padding:calc(16px + env(safe-area-inset-top,0px)) 16px calc(16px + env(safe-area-inset-bottom,0px))}
+.dr.on{transform:none}
+.dh{display:flex;justify-content:space-between;align-items:center}.dh h3{margin:0;font-size:20px}
+.x{background:none;border:0;color:var(--tx);font-size:26px;cursor:pointer}
+#items{flex:1;overflow-y:auto;margin:12px 0}
+.it{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.it .t{flex:1;font-size:14px}.it .t small{display:block;color:var(--mut)}
+.q{display:flex;align-items:center;gap:6px}.q button{width:28px;height:28px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--tx);cursor:pointer}
+.tot{display:flex;justify-content:space-between;font-size:20px;font-weight:800;margin:10px 0}
+.empty{color:var(--mut);text-align:center;padding:40px 0}
+.toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,20px);background:var(--p);padding:10px 18px;border-radius:30px;opacity:0;transition:.3s;z-index:70;font-size:14px;pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media(max-width:760px){nav.links{display:none}.hero .wrap{grid-template-columns:1fr}.phone{width:170px;height:300px;font-size:56px;order:-1}.hero{padding-top:34px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head>
+<body>
+<header><div class="wrap nav">
+<a class="logo" href="#inicio"><i>K</i><span>K<b>SHOP</b></span></a>
+<nav class="links"><a href="#catalogo">Catálogo</a><a href="#promos">Ofertas</a><a href="#servicio">Servicio técnico</a><a href="#contacto">Contacto</a></nav>
+<button class="cartbtn" id="openCart" aria-label="Carrito">🛒<span id="cnt">0</span></button>
+</div></header>
+
+<main id="inicio">
+<div class="hero"><div class="wrap">
+<div><span class="tag">BUCARAMANGA · COLOMBIA</span>
+<h1>Tu tecnología, <em>siempre al máximo.</em></h1>
+<p>Forros, cargadores, audífonos y accesorios con estilo. Y si tu celular falla, nuestro servicio técnico llega hasta tu puerta.</p>
+<div class="cta"><a class="btn b1" href="#catalogo">Explorar productos →</a><a class="btn b2" id="waHero" href="#" target="_blank" rel="noopener">💬 Comprar por WhatsApp</a></div></div>
+<div class="phone">📱<small>KSHOP</small></div>
+</div></div>
+
+<section id="categorias"><div class="wrap"><h2>Categorías</h2><p class="sub">Encuentra justo lo que buscas.</p><div class="cg" id="catGrid"></div></div></section>
+
+<section id="destacados"><div class="wrap"><h2>Productos destacados</h2><p class="sub">Selección KSHOP.</p><div class="grid" id="featGrid"></div></div></section>
+
+<section id="promos"><div class="wrap"><div class="promo"><div><h2 id="promoT"></h2><p id="promoD"></p></div><a class="btn" style="background:#fff;color:#2a0a66" href="#catalogo" data-offer>Ver ofertas</a></div></div></section>
+
+<section id="catalogo"><div class="wrap"><h2>Catálogo</h2><p class="sub">Filtra por categoría.</p><div class="cats" id="chips"></div><div class="grid" id="grid"></div></div></section>
+
+<section id="servicio"><div class="wrap"><div class="svc"><span class="tag">SERVICIO TÉCNICO</span><h2>SERVICIO TÉCNICO KSHOP</h2><p class="sub">Expertos que devuelven la vida a tu dispositivo.</p>
+<div class="sg"><div>🔧<b>Reparación de celulares</b><span>Pantallas, baterías, puertos y más.</span></div><div>🔍<b>Diagnóstico</b><span>Detectamos el problema con precisión.</span></div><div>🛠️<b>Soluciones</b><span>Software, rendimiento y recuperación.</span></div><div>🏠<b>A domicilio</b><span>Vamos a donde estés.</span></div></div>
+<a class="btn b2" id="waSvc" href="#" target="_blank" rel="noopener">💬 Solicitar atención por WhatsApp</a></div></div></section>
+
+<section><div class="wrap"><h2>Por qué KSHOP</h2><p class="sub">Confianza en cada compra.</p><div class="adv">
+<div><span>⚡</span><b> Atención inmediata</b><p>Compra y consulta directo por WhatsApp.</p></div>
+<div><span>🛡️</span><b> Productos seleccionados</b><p>Calidad revisada antes de llegar a ti.</p></div>
+<div><span>🏠</span><b> Técnico a domicilio</b><p>Comodidad total en Bucaramanga.</p></div>
+<div><span>💜</span><b> Trato cercano</b><p>Asesoría real, sin complicaciones.</p></div></div></div></section>
+</main>
+
+<footer id="contacto"><div class="wrap">
+<div class="logo"><i>K</i><span>K<b>SHOP</b></span></div>
+<p>📍 Bucaramanga, Santander, Colombia<br>💬 WhatsApp: <a id="waNum" href="#" target="_blank" rel="noopener" style="color:var(--p2)"></a></p>
+<p>© <span id="yr"></span> KSHOP. Todos los derechos reservados.</p></div></footer>
+
+<a class="fab" id="fab" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+<div class="ov" id="ov"></div>
+<aside class="dr" id="dr" aria-label="Carrito"><div class="dh"><h3>Tu pedido</h3><button class="x" id="closeCart" aria-label="Cerrar">×</button></div>
+<div id="items"></div><div class="tot"><span>Total</span><span id="tot">$0</span></div>
+<button class="btn b2" id="send">💬 Enviar pedido por WhatsApp</button>
+<button class="btn b3" id="clear" style="margin-top:8px">Vaciar carrito</button></aside>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============ CONFIGURACIÓN EDITABLE (todo en un solo lugar) ============ */
+const CONFIG={
+  whatsapp:"573153650145",            // ← TU NÚMERO: código país + número, sin + ni espacios (Colombia = 57)
+  tienda:"KSHOP",
+  promoTitulo:"Ofertas KSHOP",        // ← texto de la promoción
+  promoTexto:"Descuentos por tiempo limitado en productos seleccionados."
+};
+const CATEGORIAS=[
+  {id:"forros",n:"Forros y fundas",i:"📱"},{id:"accesorios",n:"Accesorios para celulares",i:"🔌"},
+  {id:"cargadores",n:"Cargadores y cables",i:"⚡"},{id:"audifonos",n:"Audífonos",i:"🎧"},
+  {id:"parlantes",n:"Parlantes",i:"🔊"},{id:"tech",n:"Accesorios tecnológicos",i:"⌚"},{id:"otros",n:"Otros productos",i:"📦"}
+];
+/* Productos de DEMOSTRACIÓN: reemplaza nombre, precio, desc, img (URL de foto) y oferta (precio anterior o 0).
+   destacado:true → aparece en la portada. Para quitar un producto, borra su línea. */
+const PRODUCTOS=[
+ {id:1,cat:"forros",nombre:"Forro Premium (demo)",precio:10000,oferta:0,desc:"Protección con acabado elegante. Producto de ejemplo.",img:"",destacado:true},
+ {id:2,cat:"forros",nombre:"Funda Antigolpes (demo)",precio:12000,oferta:15000,desc:"Resistencia reforzada en esquinas. Producto de ejemplo.",img:""},
+ {id:3,cat:"accesorios",nombre:"Soporte para Celular (demo)",precio:9000,oferta:0,desc:"Ajustable para escritorio o auto. Producto de ejemplo.",img:""},
+ {id:4,cat:"accesorios",nombre:"Vidrio Templado (demo)",precio:8000,oferta:0,desc:"Protege tu pantalla. Producto de ejemplo.",img:"",destacado:true},
+ {id:5,cat:"cargadores",nombre:"Cargador Rápido (demo)",precio:20000,oferta:25000,desc:"Carga veloz y segura. Producto de ejemplo.",img:"",destacado:true},
+ {id:6,cat:"cargadores",nombre:"Cable USB-C (demo)",precio:10000,oferta:0,desc:"Cable resistente. Producto de ejemplo.",img:""},
+ {id:7,cat:"audifonos",nombre:"Audífonos Bluetooth (demo)",precio:30000,oferta:0,desc:"Sonido nítido e inalámbrico. Producto de ejemplo.",img:"",destacado:true},
+ {id:8,cat:"audifonos",nombre:"Audífonos con Cable (demo)",precio:10000,oferta:0,desc:"Con micrófono integrado. Producto de ejemplo.",img:""},
+ {id:9,cat:"parlantes",nombre:"Parlante Portátil (demo)",precio:35000,oferta:40000,desc:"Potencia en tamaño compacto. Producto de ejemplo.",img:""},
+ {id:10,cat:"tech",nombre:"Reloj Inteligente (demo)",precio:40000,oferta:0,desc:"Notificaciones en tu muñeca. Producto de ejemplo.",img:""},
+ {id:11,cat:"tech",nombre:"Power Bank (demo)",precio:30000,oferta:0,desc:"Energía extra donde estés. Producto de ejemplo.",img:""},
+ {id:12,cat:"otros",nombre:"Producto Nuevo (demo)",precio:10000,oferta:0,desc:"Espacio para tu próximo producto.",img:""}
+];
+/* ====================== FIN DE CONFIGURACIÓN ====================== */
+
+const $=s=>document.querySelector(s);
+const money=n=>new Intl.NumberFormat("es-CO",{style:"currency",currency:"COP",maximumFractionDigits:0}).format(n);
+const wa=t=>"https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent(t);
+const icon=c=>(CATEGORIAS.find(x=>x.id===c)||{i:"📦"}).i;
+let cart={},cat="todos";
+try{cart=JSON.parse(localStorage.getItem("kshop_cart")||"{}")}catch(e){}
+const save=()=>{try{localStorage.setItem("kshop_cart",JSON.stringify(cart))}catch(e){}};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function card(p){
+  const img=p.img?`<img src="${esc(p.img)}" alt="${esc(p.nombre)}" loading="lazy">`:"";
+  const msg=wa(`Hola ${CONFIG.tienda}, quiero consultar por: ${p.nombre} (${money(p.precio)}).`);
+  return `<article class="card"><div class="ph">${p.oferta?'<span class="off">OFERTA</span>':""}${/demo/i.test(p.nombre)?'<span class="demo">DEMO</span>':""}${icon(p.cat)}${img}</div>
+  <div class="cb"><h3>${esc(p.nombre)}</h3><p>${esc(p.desc)}</p><div class="pr">${money(p.precio)}${p.oferta?`<s>${money(p.oferta)}</s>`:""}</div>
+  <div class="row"><button class="btn b1" data-add="${p.id}">Agregar</button><a class="btn b2" href="${msg}" target="_blank" rel="noopener">WhatsApp</a></div></div></article>`;
+}
+function render(){
+  $("#featGrid").innerHTML=PRODUCTOS.filter(p=>p.destacado).map(card).join("");
+  const list=PRODUCTOS.filter(p=>cat==="todos"||(cat==="oferta"?p.oferta:p.cat===cat));
+  $("#grid").innerHTML=list.map(card).join("")||'<p class="empty">Pronto habrá productos aquí.</p>';
+  $("#chips").innerHTML=[["todos","Todos"],["oferta","🔥 Ofertas"],...CATEGORIAS.map(c=>[c.id,c.n])].map(([id,n])=>`<button class="chip ${cat===id?"on":""}" data-cat="${id}">${n}</button>`).join("");
+}
+function drawCart(){
+  const ids=Object.keys(cart).filter(id=>PRODUCTOS.some(p=>p.id==id));
+  let total=0,n=0;
+  $("#items").innerHTML=ids.map(id=>{const p=PRODUCTOS.find(x=>x.id==id),q=cart[id];total+=p.precio*q;n+=q;
+    return `<div class="it"><div class="t">${esc(p.nombre)}<small>${money(p.precio)}</small></div><div class="q"><button data-m="${id}">−</button><b>${q}</b><button data-p="${id}">+</button></div><button class="x" data-d="${id}" aria-label="Eliminar" style="font-size:20px">🗑</button></div>`}).join("")||'<div class="empty">Tu carrito está vacío.</div>';
+  $("#tot").textContent=money(total);$("#cnt").textContent=n;save();
+}
+function toast(t){const e=$("#toast");e.textContent=t;e.classList.add("on");setTimeout(()=>e.classList.remove("on"),1500)}
+function open(v){$("#dr").classList.toggle("on",v);$("#ov").classList.toggle("on",v)}
+document.addEventListener("click",e=>{
+  const t=e.target.closest("[data-add],[data-cat],[data-m],[data-p],[data-d]");if(!t)return;
+  const d=t.dataset;
+  if(d.add){cart[d.add]=(cart[d.add]||0)+1;drawCart();toast("Agregado al carrito ✓")}
+  if(d.cat){cat=d.cat;render();$("#catalogo").scrollIntoView()}
+  if(d.m){cart[d.m]--;if(cart[d.m]<1)delete cart[d.m];drawCart()}
+  if(d.p){cart[d.p]++;drawCart()}
+  if(d.d){delete cart[d.d];drawCart()}
+});
+$("#openCart").onclick=()=>open(true);$("#closeCart").onclick=$("#ov").onclick=()=>open(false);
+$("#clear").onclick=()=>{cart={};drawCart()};
+$("#send").onclick=()=>{
+  const ids=Object.keys(cart).filter(id=>PRODUCTOS.some(p=>p.id==id));
+  if(!ids.length){toast("Tu carrito está vacío");return}
+  let total=0;const lines=ids.map(id=>{const p=PRODUCTOS.find(x=>x.id==id),q=cart[id];total+=p.precio*q;return `• ${p.nombre} x${q} — ${money(p.precio)} c/u = ${money(p.precio*q)}`});
+  window.open(wa(`Hola ${CONFIG.tienda}, quiero hacer este pedido:\n${lines.join("\n")}\n\nTotal: ${money(total)}`),"_blank");
+};
+$("#catGrid").innerHTML=CATEGORIAS.map(c=>`<button class="cc" data-cat="${c.id}"><div>${c.i}</div>${c.n}</button>`).join("");
+$("#promoT").textContent=CONFIG.promoTitulo;$("#promoD").textContent=CONFIG.promoTexto;
+document.querySelector("[data-offer]").onclick=()=>{cat="oferta";render()};
+const hello=wa(`Hola ${CONFIG.tienda}, quiero más información.`);
+["#waHero","#fab","#waNum"].forEach(s=>$(s).href=hello);
+$("#waSvc").href=wa(`Hola ${CONFIG.tienda}, necesito servicio técnico para mi celular.`);
+$("#waNum").textContent="+"+CONFIG.whatsapp;$("#yr").textContent=new Date().getFullYear();
+render();drawCart();
+</script>
+</body></html>
